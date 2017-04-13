@@ -1,0 +1,11 @@
+version: "2"
+services:
+  servicediscovery:
+    build: .
+    volumes: 
+      - /Users/geoff.tsai/Development/wha-service-discovery/config/conf.d:/etc/nginx/conf.d
+    ports: 
+      - 8301:8301
+      - 8302:8302
+      - 8500:8500
+      - 80:80
