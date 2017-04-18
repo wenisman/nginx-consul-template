@@ -2,7 +2,7 @@
     {{ range services }}
 	upstream {{.Name}} { 
 	{{ range service .Name }} server {{.Address}}:{{.Port}} max_fails=3 fail_timeout=60 weight=1; 
-	{{ else }}server 127.0.0.1:65535; # force a 502 {{ end }}
+	{{ else }}server NotFound; # force a 404 {{ end }}
 	}{{ end }}
 
 	server {
@@ -16,4 +16,8 @@
 			proxy_set_header X-Real-IP $remote_addr;
 
 		}{{ end }}
+
+		location /NotFound {
+			return 404;
+		}
 	}
