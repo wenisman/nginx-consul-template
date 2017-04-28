@@ -4,6 +4,9 @@ maxMemory: 512
 segment: external
 ports:
   - 80:80
+environment:
+  - CONSUL_URI=service-discovery.dev.williamhill.internal:8500/
+  - CONSUL_NAME=dev-service-discovery
 healthCheck:
   endpoint: /
   timeoutSeconds: 1
