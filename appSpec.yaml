@@ -1,0 +1,10 @@
+name: service-discovery
+type: service
+maxMemory: 512
+segment: external
+ports:
+  - 80:80
+healthCheck:
+  endpoint: /
+  timeoutSeconds: 1
+  intervalSeconds: 30
