@@ -1,14 +1,6 @@
-FROM alpine:3.5
+FROM 971811985820.dkr.ecr.ap-southeast-2.amazonaws.com/platform-container-nginx:latest
 
-# install nginx, unzip, dumb-init
-RUN apk add --update nginx && \
-    apk add --update unzip && \
-    apk add --update dumb-init && \
-    rm -rf /var/cache/apk/*
-
-# RUN adduser -D -u 1000 -g 'nginx' nginx
-
-RUN chown -R nginx:nginx /var/lib/nginx
+RUN yum install -y unzip
 
 ENV CONSUL_VERSION 0.8.0
 ENV CONSUL_TEMPLATE_VERSION 0.18.2
