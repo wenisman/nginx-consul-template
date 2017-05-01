@@ -12,3 +12,4 @@ services:
       - 80:80
     environment:
       - CONSUL_NAME=dev-service-discovery
+      - CONSUL_URI=service-discovery.dev.williamhill.internal:8500
