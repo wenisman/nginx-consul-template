@@ -26,5 +26,6 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 RUN [ "chmod", "+x", "/start.sh" ]
 
 EXPOSE 80 8300 8301 8301/UDP 8302 8302/UDP 8500 8600
+ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 
 CMD [ "/start.sh" ]
