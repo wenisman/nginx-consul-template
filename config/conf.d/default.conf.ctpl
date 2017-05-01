@@ -17,6 +17,11 @@
 		}
 		{{ end }}{{ end }}{{ end }}
 
+		location /health {
+			default_type application/json;
+			return 200 '{"code":"1", "message": "Not Found"}';		
+		}
+
 		location / {
 			return 404;
 		}

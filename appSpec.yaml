@@ -8,6 +8,6 @@ environment:
   - CONSUL_URI=service-discovery.dev.williamhill.internal:8500
   - CONSUL_NAME=dev-service-discovery
 healthCheck:
-  endpoint: /
+  endpoint: /health
   timeoutSeconds: 1
   intervalSeconds: 30
