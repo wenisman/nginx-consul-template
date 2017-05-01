@@ -8,7 +8,8 @@ services:
       - 8301:8301
       - 8302:8302
       - 8500:8500
+      - 8600:8600
       - 80:80
     environment:
-      - CONSUL_URI=10.134.16.133:8500
+      - CONSUL_URI=service-discovery.dev.williamhill.internal:8500
       - CONSUL_NAME=dev-service-discovery
