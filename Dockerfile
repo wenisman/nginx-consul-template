@@ -16,9 +16,7 @@ RUN unzip -d /usr/local/bin /tmp/consul-template_${CONSUL_TEMPLATE_VERSION}_linu
 # make the consul directories
 RUN mkdir -p /consul/data && \
     mkdir -p /consul/config/agent && \
-    mkdir -p /etc/nginx/conf.d && \
-    mkdir -p /var/run/nginx && \
-    chmod 777 /var/run/nginx
+    mkdir -p /etc/nginx/conf.d
 
 COPY config/conf.d /etc/nginx/conf.d
 COPY config/consul/config.json /consul/config/agent/config.json
