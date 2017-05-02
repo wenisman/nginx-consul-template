@@ -1,5 +1,6 @@
 {
     "enable_syslog": true,
-    "encrypt": "3a6nE3qvOSwaPVcg73nxLQ==",
-    "server": false
+    "server": false,
+    "client_addr":"0.0.0.0",
+    "disable_update_check": true
 }
