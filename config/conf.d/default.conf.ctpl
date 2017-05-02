@@ -10,7 +10,7 @@
 		
 		{{ range services }}{{ with service .Name }}{{ with index . 0 }}
 		location /{{.Name}} {
-			proxy_pass http://{{.Name}};
+			proxy_pass {{.Name}};
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 			proxy_set_header Host $host;
 			proxy_set_header X-Real-IP $remote_addr;
