@@ -9,8 +9,8 @@
 		listen 80;
 		
 		{{ range services }}{{ with service .Name }}{{ with index . 0 }}
-		location /{{.Name}} {
-			proxy_pass http://{{.Name}};
+		location /{{.Name}}/ {
+			proxy_pass http://{{.Name}}/;
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 			proxy_set_header Host $host;
 			proxy_set_header X-Real-IP $remote_addr;
@@ -19,7 +19,7 @@
 
 		location /health {
 			default_type application/json;
-			return 200 '{"code":"1", "message": "Not Found"}';		
+			return 200 '{"code":"1", "message": "healthy"}';		
 		}
 
 		location / {
